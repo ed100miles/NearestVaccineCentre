@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type='module' src='./data/postcode.js'></script>
+    <script type='module' src='./data/vac_sites.js'></script>
+    <script type='module' src='index.js'></script>
+</head>
+<body>
+    <form>
+        <label for='user_postcode'>Enter your postcode: </label>
+        <input type='text' id='user_postcode' name='user_postcode'>
+        <button id='postcode_btn'>Find</button>
+    </form>
+    <div>
+        <p>Your nearest vaccination centre is:</p>
+        <p id='nearest_centre_div'></p>
+    </div>
+</body>
+</html>
