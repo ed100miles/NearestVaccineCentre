@@ -21,7 +21,7 @@ function getHypot(user_lat, user_long, site_lat, site_long){
 function findCentre(e){
     e.preventDefault();
     NEAREST_CENTRE_DIV.innerHTML = 'Finding your nearest vaccine centre. Please wait...'
-    import('/data/postcode.js')
+    import('./data/postcode.js')
         .then((POSTCODES) => {
             POSTCODES = POSTCODES.POSTCODES
             let user_postcode = USER_PCODE.value;
