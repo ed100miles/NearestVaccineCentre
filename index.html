@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <script type='module' src='./data/postcode.js'></script>
-    <script type='module' src='./data/vac_sites.js'></script>
-    <script type='module' src='index.js'></script>
+    <title>Vac Site Finder</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Merriweather">
+    <link rel='stylesheet' href='style.css'>
 </head>
 <body>
+    <h1>Vaccination Center Finder</h1>
     <form>
         <label for='user_postcode'>Enter your postcode: </label>
         <input type='text' id='user_postcode' name='user_postcode'>
@@ -17,5 +17,11 @@
         <p>Your nearest vaccination centre is:</p>
         <p id='nearest_centre_div'></p>
     </div>
+
+    <div id='link-div'></div>
+
+    <script type='module' src='index.js'></script>
+    <script type='module' src='./data/vac_sites.js'></script>
 </body>
 </html>
+

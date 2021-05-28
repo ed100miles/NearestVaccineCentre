@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background-color: #d4fafa;
+  font-family: "Lora";
+  text-align: center;
+}
+
+h1 {
+  font-family: "Merriweather";
+  color: #0077ff;
+}
+
+button {
+  border: #0077ff solid;
+  font-family: "Lora";
+}
+
+/*# sourceMappingURL=style.css.map */
