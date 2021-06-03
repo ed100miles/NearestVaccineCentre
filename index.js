@@ -20,20 +20,22 @@ function getHypot(user_lat, user_long, site_lat, site_long){
 
 function findCentre(e){
     e.preventDefault();
+    let user_postcode = USER_PCODE.value.toUpperCase() //.replace(/\s+/g, '');
+ 
     NEAREST_CENTRE_DIV.innerHTML = 'Finding your nearest vaccine centre. Please wait...'
-    import('./data/postcode.js')
+    NEAREST_CENTRE_DIV.classList.add('fade-in')
+    import('./data/postcodeJSON.js')
         .then((POSTCODES) => {
-            POSTCODES = POSTCODES.POSTCODES
-            let user_postcode = USER_PCODE.value;
-            // console.log(user_postcode)
-            for(let postcode of POSTCODES){
-                if(postcode[0] == user_postcode){
-                    user_long = postcode[1];
-                    user_lat = postcode[2];
-                }
+            POSTCODES = POSTCODES.postcodes
+            if(!POSTCODES.hasOwnProperty(user_postcode)){
+                NEAREST_CENTRE_DIV.classList.remove('fade-in')
+                NEAREST_CENTRE_DIV.innerHTML = 'Sorry, can\'t find that postcode...<br> Please try again.';
+                NEAREST_CENTRE_DIV.style.color = 'red'
+                return false;
             }
+            user_long = POSTCODES[user_postcode][0]
+            user_lat = POSTCODES[user_postcode][1]
             let smallest_distance = getHypot(user_lat, user_long, 1000, 1000);
-                // console.log(smallest_distance)
             for(let [key, value] of Object.entries(VAC_SITES)){
                 site_lat = value[4]
                 site_long = value[3]
@@ -46,7 +48,9 @@ function findCentre(e){
             };
             let stite_name_for_URL = closest_site[0].replace(/\s/g, '+');
             let site_postcode_for_URL = closest_site_key.replace(/\s/g, '');
+            NEAREST_CENTRE_DIV.classList.remove('fade-in')
             NEAREST_CENTRE_DIV.innerHTML = `<h3>${closest_site[0]}</h3><p>${closest_site[1]}</p>`;
+            NEAREST_CENTRE_DIV.style.color = 'green'
             LINK_DIV.innerHTML = `<a href="https://www.google.com/maps/search/?api=1&query=${stite_name_for_URL}+${site_postcode_for_URL}">Click for map</a>`
         })
 };

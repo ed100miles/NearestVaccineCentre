@@ -25,15 +25,23 @@ import csv
 #         # print(row)
 #     vac_sites_js.write('}')
 
+# postcode_list = []
+
+# with open('data/PLL.csv', 'r') as postcode_csv:
+#     with open('data/postcode.js', 'a') as postcode_out:
+#         postcode_reader = csv.reader(postcode_csv)
+#         postcode_out.write('export const postcodes = [\n')
+#         for postcode in postcode_reader:
+#             postcode_out.write(f'{postcode},\n')
+#         postcode_out.write(']')
+
 postcode_list = []
-
+    
 with open('data/PLL.csv', 'r') as postcode_csv:
-    with open('data/postcode.js', 'a') as postcode_out:
+    with open('data/postcodeJSON.js', 'a') as postcode_out:
         postcode_reader = csv.reader(postcode_csv)
-        postcode_out.write('export const postcodes = [\n')
+        postcode_out.write('export const postcodes = {\n')
         for postcode in postcode_reader:
-            postcode_out.write(f'{postcode},\n')
-        postcode_out.write(']')
+            postcode_out.write(f'"{postcode[0]}": {postcode[1:]},\n')
+        postcode_out.write('}')
 
-
-        

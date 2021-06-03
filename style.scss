@@ -15,3 +15,13 @@ button{
     border: rgb(0, 119, 255) solid;
     font-family: 'Lora'
 }
+
+.fade-in{
+    animation: constant-fade 2s infinite;
+}
+@keyframes constant-fade {
+    0%{opacity: 0%;}
+    50%{opacity: 100%;}
+    100%{opacity: 0%}
+}
+
