@@ -1,32 +1,23 @@
-# NearestVaccineCentre 
-
-## (https://ed100miles.github.io/NearestVaccineCentre/) 
+# **NearestVaccineCentre**
 
 ## Finds your nearest Covid-19 vaccine centre 
 
----
-
-If you look online, the only way to find your closest vaccine centre is to look at a very old-school OS map drawn up by the Ministry of Defence. Or you can scroll through the list of ~2000 vaccine centres until you find one close to you. This isn't very convenient. 
+### [Open App](https://ed100miles.github.io/NearestVaccineCentre/) 
 
 ---
 
-## Enter Python! (then JS)
+## What does it do?
+The user enters their postcode, and their nearest covid-19 vaccine centre is displayed along with a link to google maps showing the location. 
 
-Two datasets were used for this project. 
+---
 
+## How does it work?
+Only vanilla JavaScript, HTML and CSS are used (and a bit of python for initial data wrangling / prototyping). 
+
+Two datasets were used for this project:
 1. The list of Covid-19 vaccination sites available on the NHS England website (correct as of 21 May 2021).
 2. A list of 1.7m postcodes in the UK and their approximate longitudes and latitudes.
 
-Longs and Lats were then added to the list of vaccine sites. 
+Longs and Lats were then added to the list of vaccine sites. The vaccination sites data is imported when the site loads and the postcode + long/lat data is loaded dynamically when the user enters their postcode. 
 
----
-
-## Usage
-
-The user enters their postcode, and their nearest vaccine centre is displayed. Also a link to google maps showing the location of the vaccine centre. 
-
----
-
-## How it works
-
-Also simple, it takes users postcode, looks it up in the list of postcodes and gets user long+lat. Then compares this to long+lats of each vaccine site. Shortest hypotenuse between the two co-odinatest is the closest. 
+After the user enters their postcode, a function is called to reformat the postcode if it's entered with any errors (incorrect spacing or lower case letters). The users longitude and latitude is then retrieved from the dataset. Then the program iterates through all the vaccination sites, calculating the hypotenuse of the difference between the users and each vaccine centre's longitude and latitude. The vaccine centre with the shortest hypotenuse from the users location is then returned along with a link to google maps formatted query the google maps API with the vaccine site name and it's postcode. 
