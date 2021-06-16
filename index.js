@@ -66,7 +66,7 @@ function findCentre(e) {
             let stite_name_for_URL = closest_site[0].replace(/\s/g, '+');
             let site_postcode_for_URL = closest_site_key.replace(/\s/g, '');
             NEAREST_CENTRE_DIV.classList.remove('fade-in')
-            NEAREST_CENTRE_DIV.innerHTML = `<h3>${closest_site[0]}</h3><p>${closest_site[1]}</p>`;
+            NEAREST_CENTRE_DIV.innerHTML = `<p style='color:black'>Your nearest vaccination centre is:</p><h3>${closest_site[0]}</h3><p>${closest_site[1]}</p>`;
             NEAREST_CENTRE_DIV.style.color = 'green'
             LINK_DIV.style.display = 'block'
             LINK_DIV.innerHTML = `<a href="https://www.google.com/maps/search/?api=1&query=${stite_name_for_URL}+${site_postcode_for_URL}" target="_blank">Click for map</a>`
