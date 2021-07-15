@@ -7,7 +7,6 @@ body{
     background-color: $bg-color2;
     font-family: 'Lora';
     text-align: center;
-    color: $off-white-text;
 }
 
 
@@ -21,6 +20,10 @@ button{
     font-family: 'Lora'
 }
 
+label{
+    color: $off-white-text;
+}
+
 .fade-in{
     animation: constant-fade 2s infinite;
 }
@@ -29,4 +32,10 @@ button{
     50%{opacity: 100%;}
     100%{opacity: 0%}
 }
-
+#info-div{
+    display: none;
+    margin-top: 1vh;
+    background-color: $off-white-text;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}

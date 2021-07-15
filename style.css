@@ -3,7 +3,6 @@ body {
   background-color: #164664;
   font-family: 'Lora';
   text-align: center;
-  color: #EEFBFB;
 }
 
 h1 {
@@ -13,6 +12,10 @@ h1 {
 
 button {
   font-family: 'Lora';
+}
+
+label {
+  color: #EEFBFB;
 }
 
 .fade-in {
@@ -42,5 +45,13 @@ button {
   100% {
     opacity: 0%;
   }
+}
+
+#info-div {
+  display: none;
+  margin-top: 1vh;
+  background-color: #EEFBFB;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 }
 /*# sourceMappingURL=style.css.map */

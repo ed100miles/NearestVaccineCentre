@@ -4,6 +4,7 @@ const USER_PCODE = document.querySelector('#user_postcode');
 const POSTCODE_BTN = document.querySelector('#postcode_btn');
 const NEAREST_CENTRE_DIV = document.querySelector('#nearest_centre_div');
 const LINK_DIV = document.querySelector('#link-div')
+const INFO_DIV = document.querySelector('#info-div')
 
 let user_lat
 let user_long
@@ -30,7 +31,8 @@ function format_postcode(postcode) {
 
 function findCentre(e) {
     e.preventDefault();
-    let user_postcode = USER_PCODE.value
+    INFO_DIV.style.display = 'block';
+    let user_postcode = USER_PCODE.value;
     user_postcode = format_postcode(user_postcode)
     if (user_postcode === 'bad postcode') {
         LINK_DIV.style.display = 'none'
