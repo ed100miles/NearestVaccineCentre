@@ -1,22 +1,35 @@
 body {
   margin: 0;
-  background-color: rgba(212, 250, 250, 0);
-  font-family: "Lora";
+  background-color: #164664;
+  font-family: 'Lora';
   text-align: center;
+  color: #EEFBFB;
 }
 
 h1 {
-  font-family: "Merriweather";
-  color: #0077ff;
+  font-family: 'Merriweather';
+  color: #EEFBFB;
 }
 
 button {
-  border: #0077ff solid;
-  font-family: "Lora";
+  font-family: 'Lora';
 }
 
 .fade-in {
-  animation: constant-fade 2s infinite;
+  -webkit-animation: constant-fade 2s infinite;
+          animation: constant-fade 2s infinite;
+}
+
+@-webkit-keyframes constant-fade {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
 }
 
 @keyframes constant-fade {
@@ -30,4 +43,4 @@ button {
     opacity: 0%;
   }
 }
-
+/*# sourceMappingURL=style.css.map */
